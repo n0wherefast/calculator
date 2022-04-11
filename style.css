@@ -1,0 +1,102 @@
+body{
+    background-color: rgb(174, 184, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:800px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 800px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+.display{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    flex-direction:column-reverse;
+    width: 480px;
+    height: 250px;
+    background-color: rgb(106, 161, 161);
+    border: 3px solid rgb(74, 170, 162);
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 80px;
+    color:rgb(10, 248, 208) ;
+}
+
+.keyboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    width: 430px;
+    height:500px;
+    background-color: gray;
+    border: 1px solid rgb(95, 93, 93);
+    border-radius: 10px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size:35px;
+    width: 85px;
+    height: 85px;
+    border-radius: 30px;
+    border: 2px solid black;
+    margin:5px; 
+    cursor: pointer;
+
+}
+.button:hover{
+    background-color: rgb(0, 47, 255);
+    color:white;
+    transition:0.5s ease-in-out;
+}
+.sec1{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgb(54, 179, 137);
+    width: 480px;
+    height: 100px;
+}
+.sec2{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgb(54, 179, 137);
+    width: 480px;
+    height: 150px;
+}
+#eq{
+    background-color: rgb(42, 116, 165);
+    width: 200px;
+
+}
+#eq:hover{
+    background-color: blue;
+}
+#C{
+    background-color:brown;
+   
+
+}#C:hover{
+    background-color:rgb(240, 8, 8);
+   
+
+}
+#multi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
