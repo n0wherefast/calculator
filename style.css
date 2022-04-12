@@ -22,14 +22,37 @@ body{
     flex-direction: row-reverse;
     align-items: flex-end;
     flex-direction:column-reverse;
-    width: 480px;
+    width: 450px;
     height: 250px;
     background-color: rgb(106, 161, 161);
     border: 3px solid rgb(74, 170, 162);
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "digital-7";
     font-size: 80px;
     color:rgb(88, 255, 152) ;
 }
+.sec1{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgb(54, 179, 137);
+    width: 450px;
+    height: 100px;
+}
+.sec2{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgb(54, 179, 137);
+    width: 450px;
+    height: 150px;
+}
+
+
+@font-face {
+    font-family: digital-7;
+    src: url(digital-7.ttf);
+}
+ 
+
+
 
 .keyboard{
     display: flex;
@@ -48,7 +71,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size:35px;
     width: 85px;
     height: 85px;
@@ -63,20 +86,7 @@ body{
     color:white;
     transition:0.5s ease-in-out;
 }
-.sec1{
-    display: flex;
-    flex-direction: row-reverse;
-    background-color: rgb(54, 179, 137);
-    width: 480px;
-    height: 100px;
-}
-.sec2{
-    display: flex;
-    flex-direction: row-reverse;
-    background-color: rgb(54, 179, 137);
-    width: 480px;
-    height: 150px;
-}
+  
 #eq{
     background-color: rgb(42, 116, 165);
     width: 200px;
