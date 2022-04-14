@@ -6,11 +6,11 @@ const keyboard = document.querySelector(".keyboard");
 const buttons =Array.from( document.getElementsByClassName('button'))
 let currentNumber='';
 let firstNumber='';
+let displayValue='';
 
 document.addEventListener('keydown',(e)=>{
 if(e.key=="Delete"){
-    sec1.textContent='';
-    sec2.textContent='';
+   clear()
 }else if(e.key=="Backspace"){
     
      sec1.textContent = sec1.textContent.slice(0,-1);
@@ -68,7 +68,7 @@ else if(e.key==1){
             firstNumber =sec1.textContent
 
              }else if(sec2.textContent ==`${currentNumber}-`){
-                
+                  
                 sec1.textContent=subtract(currentNumber,firstNumber)
                 sec2.textContent= `${currentNumber}-${firstNumber}`
                 firstNumber =sec1.textContent
@@ -98,115 +98,132 @@ console.log(e)
 buttons.map(button => {
 
     button.addEventListener('click',(e)=>{
-    
-        
-         switch(e.target.textContent){
+
+     
+        switch(e.target.textContent){
+
+
+            case '.':
            
+            dot=  e.target.textContent
+           
+            sec1.textContent= isDot = firstNumber 
             
-             case'C' :
-              sec1.textContent = '';
-              sec2.textContent = '';
-        
-              break
-              
-              case '←':
-                  if(sec1.textContent){
-                  sec1.textContent = sec1.textContent.slice(0,-1);
-                 }
-                 break
-             case '+':
-                 sec1.textContent = '';
-                 currentNumber = Number( sec2.textContent=`${firstNumber}`);
-                 sec2.textContent = `${currentNumber}+`;
-                 
-
-                 break
-
-             case '-':
-                 sec1.textContent = '';
-                 currentNumber = Number( sec2.textContent=`${firstNumber}`);
-                 sec2.textContent = `${currentNumber}-`;
-                 
-                 break
+              console.log(isDot)
+                break
+          
             
-             case '*':
-                    sec1.textContent = '';
-                    currentNumber = Number( sec2.textContent=`${firstNumber}`);
-                    sec2.textContent = `${currentNumber}*`;
-                    
-                    break
-
-            case '/':
-                    sec1.textContent = '';
-                    currentNumber = Number( sec2.textContent=`${firstNumber}`);
-                    sec2.textContent = `${currentNumber}/`;
-                    
-                    break
-
-            case '=':
-                console.log(firstNumber,currentNumber)
-
-            if(sec2.textContent ==`${currentNumber}+`){
+            case'DE' :
+             clear()
+             break
+             
+             case '←':
+                 if(sec1.textContent){
+                 sec1.textContent = sec1.textContent.slice(0,-1);
                 
-              sec1.textContent=add(firstNumber,currentNumber)
-              sec2.textContent= `${currentNumber}+${firstNumber}`
-              firstNumber =sec1.textContent
-              
-
-
-            }else if(sec2.textContent== `${currentNumber}-`){
-
-                sec1.textContent=subtract(currentNumber,firstNumber)
-                sec2.textContent= `${currentNumber}-${firstNumber}`
-                firstNumber =sec1.textContent
+                }
+                break
+            case '+':
+                sec1.textContent = '';
+                currentNumber = Number( sec2.textContent=`${firstNumber}`);
+                sec2.textContent = `${currentNumber}+`;
                 
 
-            }else if(sec2.textContent== `${currentNumber}*`){
+                break
 
-                    sec1.textContent=multiply(firstNumber,currentNumber)
-                    sec2.textContent= `${currentNumber}*${firstNumber}`
+            case '-':
+                sec1.textContent = '';
+                currentNumber = Number( sec2.textContent=`${firstNumber}`);
+                sec2.textContent = `${currentNumber}-`;
+                
+                break
+           
+            case '*':
+                   sec1.textContent = '';
+                   currentNumber = Number( sec2.textContent=`${firstNumber}`);
+                   sec2.textContent = `${currentNumber}*`;
+                   
+                   break
+
+           case '/':
+                   sec1.textContent = '';
+                   currentNumber = Number( sec2.textContent=`${firstNumber}`);
+                   sec2.textContent = `${currentNumber}/`;
+                   
+                   break
+
+           case '=':
+               console.log(firstNumber,currentNumber)
+
+           if(sec2.textContent ==`${currentNumber}+`){
+               
+             sec1.textContent=add(firstNumber,currentNumber)
+             sec2.textContent= `${currentNumber}+${firstNumber}`
+             firstNumber =sec1.textContent
+             
+
+
+           }else if(sec2.textContent== `${currentNumber}-`){
+
+               sec1.textContent=subtract(currentNumber,firstNumber)
+               sec2.textContent= `${currentNumber}-${firstNumber}`
+               firstNumber =sec1.textContent
+               
+
+           }else if(sec2.textContent== `${currentNumber}*`){
+
+                   sec1.textContent=multiply(firstNumber,currentNumber)
+                   sec2.textContent= `${currentNumber}*${firstNumber}`
+                   firstNumber =sec1.textContent
+                   
+               
+           }else if(sec2.textContent== `${currentNumber}/`){
+                       
+
+                    sec1.textContent=divide(currentNumber,firstNumber)
+                    sec2.textContent= `${currentNumber}/${firstNumber}`
                     firstNumber =sec1.textContent
-                    
-                
-            }else if(sec2.textContent== `${currentNumber}/`){
-                        
+                       
+           }
+               
+               
+           break
 
-                        sec1.textContent=divide(currentNumber,firstNumber)
-                        sec2.textContent= `${currentNumber}/${firstNumber}`
-                        firstNumber =sec1.textContent
-                        
-            }
-                
-                
-            break
-
-             default:
-                firstNumber =Number(sec1.textContent += e.target.innerText )
-            }  
+            default:
+               firstNumber =Number(sec1.textContent += e.target.innerText )
+           }  
     })
 })
 
 
 function add(a,b){
     let sum = a+b 
-    console.log(sum)
+   
     return sum 
 }
 function subtract(a,b){
     let sum = a-b 
-    console.log(sum) 
+  
     return sum
 }
 function multiply(a,b){
     let sum = a*b 
-    console.log(sum) 
+   
     return sum
 }
 function divide(a,b){
     if(a=== 0 || b===0) return 'ERR'
     let sum = a/b 
-    console.log(sum) 
+   
     return sum 
+
 }
 
 
+function clear(){
+    currentNumber='';
+    firstNumber='';
+    sec1.textContent='';
+    sec2.textContent='';
+    
+}
